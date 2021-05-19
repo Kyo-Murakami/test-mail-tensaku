@@ -1,0 +1,281 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #EAF2F9;
+  /* background-image:url(background.png); */
+  background-repeat:no-repeat;
+  background-size:100% auto;
+}
+
+.title{
+  text-align: center;
+}
+
+a {
+  text-decoration:none;
+}
+
+/*文字設定*/
+
+#Top_img {
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+}
+
+/*各Stepの文字設定*/
+.step_title{
+  display: inline-flex;
+  margin-left: 3rem;
+  margin-bottom: 4rem;
+  /* background-color: orange; */
+}
+
+.step_title img{
+  width: 10.4rem;
+  height: 6rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* background-color: blue; */
+}
+
+.step_title h1{
+
+  padding: 2rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.42rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  /* background-color: green; */
+}
+
+
+/*先生選択の設定*/
+
+.step1{
+  margin-top: 6rem;
+  /* background-color: orange; */
+}
+
+#sentaku_ele{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: green; */
+}
+
+.sentaku_text{
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.42rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+#sentaku_target{
+  width: 23rem;
+  height: 14rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+  background-color: #fff;
+}
+
+.sensei_img{
+  width: 7.6rem;
+  height: 7.6rem;
+  border-radius: 50%;
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+
+#sentaku_x img{
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+#sentaku_scene{
+  width: 23rem;
+  height: 14rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+  background-color: #fff;
+}
+
+.template_button{
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+  background-color: #096CAB;
+}
+
+.template_button p{
+  font-size: 2rem;
+  letter-spacing: 0.42rem;
+  text-align: center;
+  padding: 2rem;
+  color:#fff;
+}
+
+
+hr {
+   border-width: 1px 0px 0px 0px; /* 太さ */
+   border-style: solid; /* 線種 */
+   border-color: #808080;   /* 線色 */
+   height: 1px;         /* 高さ(※古いIE用) */
+   width: 88%;
+   margin-top: 10rem;
+   margin-bottom: 10rem;
+}
+
+/*入力エリアの設定*/
+#base{
+  text-align:center;
+}
+
+#input_area_base{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+  width: 88%;
+  height: 40rem;
+  border:none;
+  background-color: #FFFFFF;
+}
+.input_area{
+  width: 90%;
+  height: 100%;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  border:none;
+}
+
+
+
+/*添削結果*/
+
+.step3_ichi {
+  width: 88%;
+  height: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;/*緑色*/
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+}
+
+#boxes{
+  max-height: 50rem;
+  overflow: auto;
+}
+
+.goku_box{
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+  width: 88%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+  position: relative;
+}
+
+.saiyou_title{
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 2.2rem;
+  font-weight: bold;
+  opacity: 0;
+}
+
+
+.change_top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background: green; */
+}
+
+
+.hosoku{
+  padding-bottom: 0.2rem;
+  /* background: blue; */
+}
+
+.hosoku p{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.8rem;
+  font-weight: Regular;
+  letter-spacing: 0.21rem;
+  color: #808080;
+}
+
+#output_box {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#output_box p {
+  text-align: left;
+  font-size: 2.2rem;
+  font-weight: Regular;
+  letter-spacing: 0.1rem;
+  /* background-color: blue; */
+}
+
+
+/*語句表示*/
+.kaisei {
+  color: #F4901E;
+}
+
+
+#swipe_ex{
+  text-align: center;
+  /* background-color: black; */
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+div.link {
+  postion:absolute;
+  right:30px;
+  top:0px;
+  width        : 30px;
+  height       : 50px;
+  background   : #ff66ff;
+  z-index: 2;
+}
+.goku_pickup {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 0.21rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.yajirushi_img {
+  width: 3rem;
+  padding: 0;
+}
