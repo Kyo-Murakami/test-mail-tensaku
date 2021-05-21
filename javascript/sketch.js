@@ -182,6 +182,41 @@ var arr3 = [
   "ご苦労様",
 
   ];
+var arr_to = [
+  "先輩",
+  "直属の上司",
+  "取引先",
+  "お客様",
+  "教授",
+
+];
+
+//シーン選択
+// function target_sentaku(){
+//   $('#target_sentaku').css({
+//      'display' : 'block'});
+//   $('#haikei1').css({
+//      'display' : 'block'});
+//
+// }
+//
+// function sentaku_modoru(){
+//   $('#target_sentaku').css({
+//      'display' : 'none'});
+//    $('#haikei1').css({
+//       'display' : 'none'});
+//
+//   $('.sentaku_boxes').on('click', function() {
+//       var sentaku_id = $(this).attr('id');
+//       var sentaku_id_title = document.getElementById(sentaku_id).h1;
+//       console.log(sentaku_id);
+//   });
+//
+// }
+
+
+
+
 
 //翻訳作業
 
@@ -206,7 +241,6 @@ function update_field() {
        let clone = boxes.firstElementChild.cloneNode(true);
        boxes.appendChild(clone);
        clone.id = "content_area" + h;
-       $('#content_area26 .saiyou_title').attr('id', 'saiyou_title'+h);
        setSwipe("#content_area" + h);
 
        };
@@ -216,26 +250,6 @@ function update_field() {
 
    };
 
-
-
-//コピー要素
-function clipboard_ni_copy2()
-{
-    var copyText = document.querySelector('#output');
-
-    var range = document.createRange();
-    range.selectNodeContents(copyText);
-
-    var selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
-
-    if(document.execCommand('copy')) {
-        alert('クリップボードにコピーしました.');
-    } else {
-        alert('Ctrl+Cを押してください.');
-    }
-}
 
 //スワイプ処理
 
@@ -263,8 +277,9 @@ function setSwipe(elem) {
     // タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
     t.addEventListener("touchend", function(e) {
         if (startX > moveX && startX > moveX + dist) {        // 右から左にスワイプ
+          var class_name = document.getElementById(`content_area${res}`).id;
             // 右から左にスワイプした時の処理(不採用)
-            $('#saiyou_title'+res).html("不採用");
+            $(`#${class_name} .saiyou_title`).html("不採用");
 
             // 語句を置換する
             var txt = $('#output').html();
@@ -279,17 +294,22 @@ function setSwipe(elem) {
                'background-color' : '#F9CADE' ,
                'font-size' : '20px' ,
                'opacity' : '0.8' ,
+               'transition' : 'background 1s ease,width 1s ease',
               'margin-left' : '0'});
 
-            $('#saiyou_title'+res).css({
+            $(`#${class_name} .saiyou_title`).css({
                'color' : '#FF7BA8',
               'opacity' : '1'});
         }
-        else if (startX < moveX && startX + dist < moveX) {    // 左から右にスワイプ
+        else if (startX < moveX && startX + dist < moveX) {
+
+          var class_name = document.getElementById(`content_area${res}`).id;
+          // console.log(class_name);
+
             // 左から右にスワイプした時の処理(採用)
 
             console.log("migi");
-            $('#saiyou_title'+res).html("採用");
+            $(`#${class_name} .saiyou_title`).html("採用");
 
             // 語句を置換する
             var txt = $('#output').html();
@@ -303,11 +323,54 @@ function setSwipe(elem) {
                'background-color' : '#C2EDF9' ,
                'font-size' : '20px' ,
                'opacity' : '0.8' ,
-              'margin-right' : '0'});
+               'transition' : 'background 1s ease,width 1s ease',
+              'margin-right' : '0',
+              'margin-left' : 'auto'  });
 
-            $('#saiyou_title'+res).css({
+            $(`#${class_name} .saiyou_title`).css({
                'color' : '#29A8DF',
              'opacity' : '1'});
+             // var target = document.getElementById('boxes');
+             // var y = target.scrollTop;
+             // target.scrollTop = y + 236;
+			       //    console.log(y);
+
         }
     });
+}
+
+//コピー要素
+function clipboard_ni_copy2()
+{
+    var copyText = document.querySelector('#output');
+
+    var range = document.createRange();
+    range.selectNodeContents(copyText);
+
+    var selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+
+    $('#target').css({
+       'display' : 'block'});
+     $('#haikei1').css({
+        'display' : 'block'});
+
+
+
+    if(document.execCommand('copy')) {
+        console.log('クリップボードにコピーしました.');
+    } else {
+        console.log('Ctrl+Cを押してください.');
+    }
+}
+
+// 戻るボタン
+function modoru()
+{
+  $('#target').css({
+     'display' : 'none'});
+     $('#haikei1').css({
+        'display' : 'none'});
 }
