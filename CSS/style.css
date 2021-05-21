@@ -13,9 +13,39 @@ body {
 
 a {
   text-decoration:none;
-}
+  }
 
-/*文字設定*/
+h1{
+  padding: 2rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.42rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  /* background-color: green; */
+  }
+
+h3{
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.42rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  /* color: red; */
+  }
+
+hr {
+   border-width: 1px 0px 0px 0px; /* 太さ */
+   border-style: solid; /* 線種 */
+   border-color: #808080;   /* 線色 */
+   height: 1px;         /* 高さ(※古いIE用) */
+   width: 88%;
+   margin-top: 10rem;
+   margin-bottom: 10rem;
+  }
+
+/*文字 設定*/
 
 #Top_img {
   width: 75%;
@@ -41,17 +71,6 @@ a {
   /* background-color: blue; */
 }
 
-.step_title h1{
-
-  padding: 2rem;
-  font-size: 2.5rem;
-  letter-spacing: 0.42rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 0;
-  /* background-color: green; */
-}
-
 
 /*先生選択の設定*/
 
@@ -68,15 +87,6 @@ a {
   margin-left: auto;
   margin-right: auto;
   /* background-color: green; */
-}
-
-.sentaku_text{
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 0.42rem;
-  margin-bottom: 0;
-  margin-top: 1rem;
 }
 
 #sentaku_target{
@@ -128,16 +138,61 @@ a {
   color:#fff;
 }
 
-
-hr {
-   border-width: 1px 0px 0px 0px; /* 太さ */
-   border-style: solid; /* 線種 */
-   border-color: #808080;   /* 線色 */
-   height: 1px;         /* 高さ(※古いIE用) */
-   width: 88%;
-   margin-top: 10rem;
-   margin-bottom: 10rem;
+#target_sentaku {
+  position:fixed;
+  display:none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #FFFFFF;
+  width: 80%;
+  height: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+  transition: opacity 200ms;
 }
+
+#target_sentaku_topbox{
+  background-color: #ffffff;
+  box-shadow: 0 5px 8px 0 rgba(71, 71, 71, 0.1);
+  border-radius: 10px 10px 0 0;
+  height: 9rem;
+  }
+
+#target_sentaku_topbox h1{
+  text-align: center;
+  line-height: 5rem;
+  }
+
+.sentaku_boxes{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 13rem;
+  /* background: green; */
+}
+
+.sentaku_boxes_border{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-bottom: 1px solid #B0B0B0;
+}
+
+.sentaku_img{
+  width: 7.6rem;
+  height: 7.6rem;
+  margin-left: 6rem;
+}
+
+.sentaku_boxes h1{
+  margin-right: 4rem;
+  width: 24rem;
+  text-align: left;
+  /* background-color: blue; */
+}
+
+
 
 /*入力エリアの設定*/
 #base{
@@ -159,9 +214,11 @@ hr {
 .input_area{
   width: 90%;
   height: 100%;
-  font-size: 1rem;
+  font-size: 2.2rem;
+  font-weight: normal;
   letter-spacing: 0.1rem;
   border:none;
+  outline: none;
 }
 
 
@@ -179,15 +236,16 @@ hr {
 }
 
 #boxes{
-  max-height: 50rem;
+  max-height: 48rem;
   overflow: auto;
+  scroll-snap-type: y mandatory;
 }
 
 .goku_box{
   margin-left: auto;
   margin-right: auto;
   padding-top: 3rem;
-  margin-top: 2rem;
+  margin-top: 2.2rem;
   text-align: center;
   width: 88%;
   background: #fff;
@@ -204,6 +262,7 @@ hr {
   font-size: 2.2rem;
   font-weight: bold;
   opacity: 0;
+  scroll-snap-align: start;
 }
 
 
@@ -237,7 +296,7 @@ hr {
 #output_box p {
   text-align: left;
   font-size: 2.2rem;
-  font-weight: Regular;
+  font-weight: normal;
   letter-spacing: 0.1rem;
   /* background-color: blue; */
 }
@@ -278,4 +337,39 @@ div.link {
 .yajirushi_img {
   width: 3rem;
   padding: 0;
+}
+
+/* ポップアップ */
+
+#target {
+  position:fixed;
+  display:none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #FFFFFF;
+  width: 80%;
+  height: 43%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(126, 181, 177, 0.2);
+  transition: opacity 200ms;
+}
+
+#haikei1 {
+  position:fixed;
+  display:none;
+  top: 50%;
+  top: 50%;
+  width: 100vh;
+  height: 100vh;
+  transform: translate(-50%,-50%);
+  background-color: black;
+  opacity: 0.2;
+}
+
+#check_img{
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  width: 100%;
 }
