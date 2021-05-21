@@ -9,87 +9,134 @@
 <script src="javascript/sketch.js"></script>
 </head>
 <body>
-
-<!--先生選択画面-->
-<img id="Top_img" src="images/Top_image.png"></img>
-<div class="step1">
-  <div class = "step_title">
-    <img class="step_img" src="images/step1.png"></img>
-     <h1 class="title">メールを送る相手を選択する</h1>
-  </div>
-  <div id = "sentaku_ele">
-    <div id = "sentaku_target">
-      <p class = "sentaku_text">直属の上司</p>
-      <img class= "sensei_img" src ="images/business_mail.jpg"></img>
+  <!--先生選択画面-->
+  <img id="Top_img" src="images/Top_image.png"></img>
+  <div class="step1">
+    <div class = "step_title">
+      <img class="step_img" src="images/step1.png"></img>
+       <h1 class="title">メールを送る相手を選択する</h1>
     </div>
-    <div id = "sentaku_x">
-      <img src ="images/x.png"></img>
-    </div>
-    <div id = "sentaku_scene">
-      <p class = "sentaku_text">謝罪のメール</p>
-      <img class= "sensei_img" src ="images/business_mail.jpg"></img>
-    </div>
-  </div>
-  <a href="#1">
-    <div class ="template_button">
-      <p>テンプレートを挿入</p>
-    </div>
-  </a>
-</div>
-  <hr>
- <!--文字入力-->
- <div class = "step2" id = "1">
-   <div class = "step_title">
-       <img class="step_img" src="images/step2.png"></img>
-        <h1 class="title">文章を入力する</h1>
-   </div>
-   <div id="base">
-     <div id="input_area_base">
-         <textarea class="input_area" name="text"></textarea>
+    <div id = "sentaku_ele">
+      <div id = "sentaku_target" onclick="target_sentaku()">
+        <h3 class = "sentaku_text" id = "sentaku_title">直属の上司</h3>
+        <img class= "sensei_img" src ="images/business_mail.jpg"></img>
       </div>
-         <a href="#2">
-           <div class = "template_button" onclick="update_field();">
-             <p>添削する</p>
-           </div>
-         </a>
-   </div>
- </div>
+      <div id = "sentaku_x">
+        <img src ="images/x.png"></img>
+      </div>
+      <div id = "sentaku_scene">
+        <h3 class = "sentaku_text">謝罪のメール</h3>
+        <img class= "sensei_img" src ="images/business_mail.jpg"></img>
+      </div>
+    </div>
+    <a href="#1">
+      <div class ="template_button">
+        <p>テンプレートを挿入</p>
+      </div>
+    </a>
+  </div>
     <hr>
-<!--添削確認-->
-<div class ="step3" id = "2">
-  <div class = "step_title">
-    <img class="step_img" src="images/step3.png"></img>
-     <h1 class="title">添削結果を確認する</h1>
-  </div>
-  <div id = "swipe_ex">
-    <img class="step_img" src="images/explain.png"></img>
-  </div>
-     <div id="boxes">
-      <div class="goku_box" id="boxes_none">
-        <div class = "saiyou_title">
-          <p>採用</p>
-        </div>
-        <div class = "change_top">
-          <p class="goku_pickup" id="output_alter" >前の語句</p>
-          <img class ="yajirushi_img" src ="images/yajirushi.png"></img>
-          <p class="goku_pickup" id="output_alter2">言い換え</p>
-        </div>
-        <div class ="hosoku">
-          <p>補足情報</p>
-        </div>
-      </div>
+   <!--文字入力-->
+   <div class = "step2" id = "1">
+     <div class = "step_title">
+         <img class="step_img" src="images/step2.png"></img>
+          <h1 class="title">文章を入力する</h1>
      </div>
+     <div id="base">
+       <div id="input_area_base">
+           <textarea class="input_area" name="text" ></textarea>
+        </div>
+           <a href="#2">
+             <div class = "template_button" onclick="update_field();">
+               <p>添削する</p>
+             </div>
+           </a>
+     </div>
+   </div>
+      <hr>
+  <!--添削確認-->
+  <div class ="step3" id = "2">
+    <div class = "step_title">
+      <img class="step_img" src="images/step3.png"></img>
+       <h1 class="title">添削結果を確認する</h1>
+    </div>
+    <div id = "swipe_ex">
+      <img class="step_img" src="images/explain.png"></img>
+    </div>
+       <div id="boxes">
+        <div class="goku_box" id="boxes_none">
+          <div class = "saiyou_title">
+            <p>採用</p>
+          </div>
+          <div class = "change_top">
+            <p class="goku_pickup" id="output_alter" >前の語句</p>
+            <img class ="yajirushi_img" src ="images/yajirushi.png"></img>
+            <p class="goku_pickup" id="output_alter2">言い換え</p>
+          </div>
+          <div class ="hosoku">
+            <p>補足情報</p>
+          </div>
+        </div>
+       </div>
 
 
- <div class="step3_ichi">
-  <div id ="output_box">
-   <p name="text" id="output" >ここに出力されます</p>
+   <div class="step3_ichi">
+    <div id ="output_box">
+     <p name="text" id="output" >ここに出力されます</p>
+    </div>
+   </div>
+   <div class = "template_button" id = "copy_btn" onclick="clipboard_ni_copy2()">
+     <p>先生の文章をコピーする</p>
+   </div>
   </div>
- </div>
- <div class = "template_button" id = "copy_btn" onclick="clipboard_ni_copy2()">
-   <p>先生の文章をコピーする</p>
+  <div id = "haikei1">
+  </div>
+  <div id="target_sentaku">
+    <div id = "target_sentaku_topbox">
+      <h1>送信先を選ぶ</h1>
+    </div>
+    <div id = "container_sentaku_boxes">
+       <div  class = "sentaku_boxes" id = "douryou" onclick="sentaku_modoru()">
+        <div>
+          <img class="sentaku_img" src="images/check.png"></img>
+        </div>
+        <h1>同僚</h1>
+       </div>
+       <div class = "sentaku_boxes_border">
+       </div>
+       <div  class = "sentaku_boxes" id = "senpai" onclick="sentaku_modoru()">
+         <div>
+           <img class="sentaku_img" src="images/check.png"></img>
+         </div>
+         <h1>先輩</h1>
+      </div>
+      <div class = "sentaku_boxes_border">
+      </div>
+      <div  class = "sentaku_boxes" id = "tyokuzokunojyoushi" onclick="sentaku_modoru()">
+       <div>
+         <img class="sentaku_img" src="images/check.png"></img>
+       </div>
+       <h1>直属の上司</h1>
+      </div>
+      <div class = "sentaku_boxes_border">
+      </div>
+      <div  class = "sentaku_boxes" id = "torihikisaki" onclick="sentaku_modoru()">
+        <div>
+          <img class="sentaku_img" src="images/check.png"></img>
+        </div>
+        <h1>取引先</h1>
+     </div>
+     <div class = "sentaku_boxes_border">
+     </div>
  </div>
 
 </div>
+  <div id="target">
+    <img id="check_img" src="images/check.png"></img>
+    <div class = "template_button" onclick="modoru()">
+      <p>戻る</p>
+    </div>
+</div>
+
 </body>
 </html>
